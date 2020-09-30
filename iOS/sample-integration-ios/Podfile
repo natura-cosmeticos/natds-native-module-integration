@@ -6,6 +6,7 @@ target 'sample-integration-ios' do
   use_frameworks!
 
   # Pods for sample-integration-ios
+  pod 'NatDS'
 
   target 'sample-integration-iosTests' do
     inherit! :search_paths

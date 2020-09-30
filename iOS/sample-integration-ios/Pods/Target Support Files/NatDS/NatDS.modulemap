@@ -1,0 +1,6 @@
+framework module NatDS {
+  umbrella header "NatDS-umbrella.h"
+
+  export *
+  module * { export * }
+}
