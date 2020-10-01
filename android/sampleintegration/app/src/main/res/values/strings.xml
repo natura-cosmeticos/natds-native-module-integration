@@ -3,4 +3,5 @@
     <string name="native_button_label">Nativo</string>
     <string name="react_native1_button_label">React Native 1</string>
     <string name="react_native2_button_label">React Native 2</string>
+    <string name="main_page_title">Sample Integration</string>
 </resources>

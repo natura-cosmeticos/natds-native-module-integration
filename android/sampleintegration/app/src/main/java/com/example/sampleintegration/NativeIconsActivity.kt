@@ -3,10 +3,9 @@ package com.example.sampleintegration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity() {
+class NativeIconsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        supportActionBar?.title = getString(R.string.main_page_title)
+        setContentView(R.layout.activity_native_icons)
     }
 }
