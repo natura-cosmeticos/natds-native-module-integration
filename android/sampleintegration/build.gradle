@@ -18,9 +18,29 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        def githubProperties = new Properties()
+        def githubFile = rootProject.file("github_credentials.properties")
+        if (githubFile.exists()) {
+            githubProperties.load(new FileInputStream(githubFile))
+        }
+
+        maven {
+            name = "natds-android"
+            url = uri("https://maven.pkg.github.com/natura-cosmeticos/natds-android")
+            credentials {
+                username = githubProperties['github.username'] ?: System.getenv("GITHUB_USERNAME")
+                password = githubProperties['github.password'] ?: System.getenv("GITHUB_API_KEY")
+            }
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    designSystemVersion = '2.7.0'
+    materialVersion = '1.1.0'
 }
