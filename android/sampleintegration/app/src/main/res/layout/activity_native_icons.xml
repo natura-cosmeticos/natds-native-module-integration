@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".NativeIconsActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/iconsRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="?spacingMicro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/icon_item" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

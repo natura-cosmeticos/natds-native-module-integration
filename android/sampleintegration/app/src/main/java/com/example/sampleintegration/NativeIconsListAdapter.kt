@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleintegration.NativeIconsListAdapter.*
 import com.example.sampleintegration.model.Icon
 
-class NativeIconsListAdapter internal constructor(context: Context): RecyclerView.Adapter<IconViewHolder>() {
+class NativeIconsListAdapter internal constructor(context: Context, private var icons: List<Icon>): RecyclerView.Adapter<IconViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var icons = emptyList<Icon>()
 
     inner class IconViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)  {
         val iconView: ImageView = itemView.findViewById(R.id.icon)
@@ -30,4 +29,9 @@ class NativeIconsListAdapter internal constructor(context: Context): RecyclerVie
     }
 
     override fun getItemCount(): Int = icons.size
+
+    fun setIcons(words: List<Icon>) {
+        this.icons = icons
+        notifyDataSetChanged()
+    }
 }
