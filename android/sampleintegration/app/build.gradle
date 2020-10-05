@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.facebook.testing.screenshot'
 
 android {
     compileSdkVersion 30
@@ -32,15 +33,21 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     testImplementation 'junit:junit:4.12'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    implementation "com.natura.android:designsystem:$rootProject.designSystemVersion"
-    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    androidTestImplementation "androidx.test:rules:$rootProject.androidXTestVersion"
 
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
 
+    //Natura Design System dependencies
+    implementation "com.natura.android:designsystem:$rootProject.designSystemVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+
+    //Screenshot tests
+    androidTestImplementation "com.facebook.testing.screenshot:layout-hierarchy-common:$rootProject.screenshotTestVersion"
+    androidTestImplementation "com.facebook.testing.screenshot:layout-hierarchy-litho:$rootProject.screenshotTestVersion"
 }
