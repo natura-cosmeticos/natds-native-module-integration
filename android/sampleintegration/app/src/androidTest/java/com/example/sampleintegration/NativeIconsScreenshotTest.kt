@@ -10,6 +10,7 @@ import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import com.facebook.testing.screenshot.Screenshot
+import kotlinx.android.synthetic.main.activity_native_icons.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -28,7 +29,9 @@ class NativeIconsScreenshotTest {
 
     @Test
     fun checkIcons() {
-        for(i in 0..220) {
+        val totalIcons = iconsActivity.iconsRecyclerView.adapter?.itemCount ?: 0
+
+        for(i in 0..totalIcons) {
             onView(withId(R.id.iconsRecyclerView))
                 .perform(scrollToPosition<RecyclerView.ViewHolder>(i))
             Screenshot.snapActivity(iconsActivity).setName("Icons Activity $i").record()
