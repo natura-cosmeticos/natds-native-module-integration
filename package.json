@@ -1,0 +1,19 @@
+{
+  "name": "natds-native-module-integration",
+  "version": "1.0.0",
+  "description": "Native app (Android and iOS) with Nat DS dependency and react native modules that also have Nat DS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natura-cosmeticos/natds-native-module-integration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natura-cosmeticos/natds-native-module-integration/issues"
+  },
+  "homepage": "https://github.com/natura-cosmeticos/natds-native-module-integration#readme"
+}
