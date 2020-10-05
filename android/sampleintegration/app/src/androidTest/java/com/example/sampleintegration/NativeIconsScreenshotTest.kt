@@ -1,15 +1,19 @@
 package com.example.sampleintegration
 
-import android.view.View
-import androidx.test.core.app.ActivityScenario
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.recyclerview.widget.RecyclerView
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.*
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import com.facebook.testing.screenshot.Screenshot
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
-import java.lang.annotation.Native
 
 @RunWith(AndroidJUnit4::class)
 class NativeIconsScreenshotTest {
@@ -22,7 +26,12 @@ class NativeIconsScreenshotTest {
         iconsActivity = activityTestRule.launchActivity(null)
     }
 
+    @Test
     fun checkIcons() {
-        Screenshot.snapActivity(iconsActivity).setName("Icons Activity").record()
+        for(i in 0..220) {
+            onView(withId(R.id.iconsRecyclerView))
+                .perform(scrollToPosition<RecyclerView.ViewHolder>(i))
+            Screenshot.snapActivity(iconsActivity).setName("Icons Activity $i").record()
+        }
     }
 }
