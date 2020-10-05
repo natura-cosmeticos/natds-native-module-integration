@@ -12,7 +12,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = IconsPlataformChoiceViewController()
+
+        let navigationController = UINavigationController(rootViewController: IconsPlataformChoiceViewController())
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
     }

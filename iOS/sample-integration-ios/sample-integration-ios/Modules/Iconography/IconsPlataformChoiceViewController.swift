@@ -30,6 +30,13 @@ class IconsPlataformChoiceViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
+
+        nativeButton.addTarget(self, action: #selector(nativeButtonTapHandler), for: .touchUpInside)
+     }
+
+    @objc func nativeButtonTapHandler() {
+        let viewController = NativeIconographyViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     private func setup() {
