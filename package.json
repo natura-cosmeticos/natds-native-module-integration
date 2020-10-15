@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/natura-cosmeticos/natds-native-module-integration/issues"
   },
-  "homepage": "https://github.com/natura-cosmeticos/natds-native-module-integration#readme"
+  "homepage": "https://github.com/natura-cosmeticos/natds-native-module-integration#readme",
+  "dependencies": {
+    "react-native": "^0.63.3"
+  }
 }
