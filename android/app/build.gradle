@@ -40,8 +40,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation(name: 'SellingCartLibrary-release', ext: 'aar')
-    implementation(name: 'rn-sample-android-lib-release', ext: 'aar')
+    implementation(name: 'rnsample-release', ext: 'aar')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
