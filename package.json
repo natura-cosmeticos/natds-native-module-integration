@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/natura-cosmeticos/natds-native-module-integration#readme",
   "dependencies": {
-    "react-native": "^0.63.3"
+    "react": "16.13.1",
+    "react-native": "^0.63.2"
   }
 }

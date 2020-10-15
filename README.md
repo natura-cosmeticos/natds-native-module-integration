@@ -4,7 +4,9 @@ Native app (Android and iOS) with Nat DS dependency and react native modules tha
 ## Android Project
 
 ### Run Android Project
-`make build`
+- `npm install`
+- add .aar at /lib folder
+- `make build`
 
 ### Run screenshot tests
 `make run-screenshot-tests`

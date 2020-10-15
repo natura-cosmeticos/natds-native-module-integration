@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    ext.screenshotVersion = "0.13.0"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.facebook.testing.screenshot:plugin:$screenshotVersion"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url "$rootDir/../node_modules/react-native/android"
+        }
+
+        maven {
+            url "$rootDir/../node_modules/jsc-android/dist"
+        }
+
+        flatDir {
+            dirs 'libs'
+        }
+
+        def githubProperties = new Properties()
+        def githubFile = rootProject.file("github_credentials.properties")
+        if (githubFile.exists()) {
+            githubProperties.load(new FileInputStream(githubFile))
+        }
+
+        maven {
+            name = "natds-android"
+            url = uri("https://maven.pkg.github.com/natura-cosmeticos/natds-android")
+            credentials {
+                username = githubProperties['github.username'] ?: System.getenv("GITHUB_USERNAME")
+                password = githubProperties['github.password'] ?: System.getenv("GITHUB_API_KEY")
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    designSystemVersion = '2.7.0'
+    materialVersion = '1.1.0'
+    archLifecycleVersion = '2.2.0'
+    screenshotTestVersion = '0.13.0'
+    androidXTestVersion = '1.2.0'
+}
