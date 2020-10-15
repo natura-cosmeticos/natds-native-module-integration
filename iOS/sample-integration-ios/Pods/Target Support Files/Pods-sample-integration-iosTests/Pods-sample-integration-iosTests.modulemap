@@ -1,6 +1,0 @@
-framework module Pods_sample_integration_iosTests {
-  umbrella header "Pods-sample-integration-iosTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
