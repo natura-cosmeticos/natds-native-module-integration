@@ -1,12 +1,6 @@
-//
-//  AppDelegate.swift
-//  sample-integration-ios
-//
-//  Created by Raoni Valadares on 30/09/20.
-//
-
 import UIKit
 import NatDS
+import rn_sample_ios_lib
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         DesignSystem().configure(with: .naturaLight)
+        SampleResourcesManager.registerFonts()
+        
         return true
     }
 

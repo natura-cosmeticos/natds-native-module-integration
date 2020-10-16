@@ -18,7 +18,7 @@ class IconCollectionViewCell: UICollectionViewCell {
     }()
 
     private let iconView: IconView = {
-        let iconView = IconView(fontSize: 32)
+        let iconView = IconView(fontSize: NatSizes.semi)
         iconView.tintColor = NatColors.highEmphasis
 
         return iconView
