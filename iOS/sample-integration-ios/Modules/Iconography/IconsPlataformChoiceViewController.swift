@@ -1,6 +1,7 @@
 import UIKit
 import NatDS
 import rn_sample_ios_lib
+import rn_sample_fixed_ios_lib
 
 class IconsPlataformChoiceViewController: UIViewController {
     private let nativeButton: NatButton = {
@@ -34,6 +35,7 @@ class IconsPlataformChoiceViewController: UIViewController {
 
         nativeButton.addTarget(self, action: #selector(nativeButtonTapHandler), for: .touchUpInside)
         reactivenativeV1Button.addTarget(self, action: #selector(reactivenativeV1ButtonTapHandler), for: .touchUpInside)
+        reactivenativeV2Button.addTarget(self, action: #selector(reactivenativeV2ButtonTapHandler), for: .touchUpInside)
      }
 
     @objc func nativeButtonTapHandler() {
@@ -44,7 +46,14 @@ class IconsPlataformChoiceViewController: UIViewController {
     @objc func reactivenativeV1ButtonTapHandler() {
         let viewController = UIViewController()
 
-        IconographyModule().start(fromViewController: viewController)
+        rn_sample_ios_lib.IconographyModule().start(fromViewController: viewController)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @objc func reactivenativeV2ButtonTapHandler() {
+        let viewController = UIViewController()
+
+        rn_sample_fixed_ios_lib.IconographyModule().start(fromViewController: viewController)
         navigationController?.pushViewController(viewController, animated: true)
     }
 

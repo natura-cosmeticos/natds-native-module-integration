@@ -9,7 +9,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 def react_native_dependencies
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
-  pod "rn-sample-ios-lib", :git => "git@github.com:natura-cosmeticos/natds-rn-samples.git", :branch => "rn-sample-icons"
+  pod "rn-sample-ios-lib", :git => "git@github.com:natura-cosmeticos/natds-rn-samples.git", :branch => "ios-integration"
+  pod "rn-sample-fixed-ios-lib", :git => "git@github.com:natura-cosmeticos/natds-rn-samples.git", :branch => "ios-integration"
 end
 
 target 'sample-integration-ios' do
@@ -27,5 +28,4 @@ target 'sample-integration-ios' do
     # Pods for testing
     react_native_dependencies
   end
-
 end
