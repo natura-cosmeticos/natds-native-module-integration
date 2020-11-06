@@ -1,6 +1,7 @@
 import UIKit
 import NatDS
 import rn_sample_ios_lib
+import rn_sample_fixed_ios_lib
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         DesignSystem().configure(with: .naturaLight)
-        SampleResourcesManager.registerFonts()
+        rn_sample_ios_lib.SampleResourcesManager.registerFonts()
+        rn_sample_fixed_ios_lib.SampleResourcesManager.registerFonts()
         
         return true
     }
