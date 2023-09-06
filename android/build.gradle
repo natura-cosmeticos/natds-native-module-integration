@@ -57,7 +57,7 @@ task clean(type: Delete) {
 ext {
     designSystemVersion = '2.7.0'
     materialVersion = '1.1.0'
-    archLifecycleVersion = '2.2.0'
+    archLifecycleVersion = '2.6.2'
     screenshotTestVersion = '0.13.0'
     androidXTestVersion = '1.2.0'
 }
